@@ -34,7 +34,7 @@ const Modal = ({ open, onClose, date }: ModalProps) => {
             <ImCross />
           </button>
         </div>
-        <h2> On this day, the birthdays are</h2>
+        <h2> On this day, the birthdays have</h2>
         {searchBirthday.map((data: Birthday, index: number) => (
           <Person {...data} />
         ))}
