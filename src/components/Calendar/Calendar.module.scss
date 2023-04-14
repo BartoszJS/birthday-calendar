@@ -1,0 +1,116 @@
+.calendars {
+  padding-top: 0px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  &__buttons {
+    position: absolute;
+    margin-top: 85px;
+    &__button {
+      border: none;
+      margin: 2px;
+      border-radius: 5px;
+      box-shadow: 0px 3px 5px -5px rgba(66, 68, 90, 1);
+      cursor: pointer;
+    }
+  }
+}
+
+.calendar {
+  max-width: 600px;
+  width: 100%;
+  &__container {
+    margin: 60px auto;
+    font-size: 1.5rem;
+    background-color: white;
+    box-shadow: 0px 3px 24px -8px rgba(66, 68, 90, 1);
+    border-radius: 10px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  &__months {
+    display: grid;
+    grid-template-columns: 5fr 2fr 1fr;
+  }
+  &__arrow_button {
+    border: none;
+    background-color: transparent;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  &__week {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    &__day {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  &__month {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    &__day {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &__button {
+        border: none;
+        font-size: 1rem;
+        width: 32px;
+        height: 32px;
+        margin: 5px;
+        border-radius: 16px;
+        cursor: pointer;
+        &:hover {
+          background-color: lightgrey;
+        }
+      }
+      .selected {
+        background-color: gray;
+        color: white;
+      }
+    }
+  }
+
+  &__placeholder {
+    width: 6px;
+    height: 6px;
+    border-radius: 100%;
+    background-color: transparent;
+    margin: 0 auto;
+    &__dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 100%;
+      background-color: blue;
+      margin: 0 auto;
+    }
+  }
+
+  &__birthdays {
+    margin-top: 20px;
+    padding: 20px;
+    font-size: 1rem;
+    border-top: 1px solid gray;
+    list-style-type: none;
+  }
+  &__list {
+    list-style-type: none;
+    padding: 0;
+  }
+  &__search {
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+  }
+
+  .alert__list {
+    position: absolute;
+    font-size: 1rem;
+  }
+}
