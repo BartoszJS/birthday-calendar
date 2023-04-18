@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/birthday-calendar/static/css/main.e14fe0db.css",
-    "main.js": "/birthday-calendar/static/js/main.17fc0b9b.js",
+    "main.js": "/birthday-calendar/static/js/main.570167f0.js",
     "index.html": "/birthday-calendar/index.html",
     "main.e14fe0db.css.map": "/birthday-calendar/static/css/main.e14fe0db.css.map",
-    "main.17fc0b9b.js.map": "/birthday-calendar/static/js/main.17fc0b9b.js.map"
+    "main.570167f0.js.map": "/birthday-calendar/static/js/main.570167f0.js.map"
   },
   "entrypoints": [
     "static/css/main.e14fe0db.css",
-    "static/js/main.17fc0b9b.js"
+    "static/js/main.570167f0.js"
   ]
 }
