@@ -1,7 +1,7 @@
 {
   "name": "birthday-calendar",
   "version": "0.1.0",
-  "homepage": "https://bartoszjs.github.io/birthday-calendar",
+  "homepage": "https://bartoszjs.github.io",
   "private": true,
   "proxy": "http://localhost:3000",
   "dependencies": {
