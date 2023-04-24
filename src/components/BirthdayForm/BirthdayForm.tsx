@@ -40,12 +40,6 @@ const BirthdayForm = () => {
   };
   return (
     <div className={styles.birthday}>
-      <Navigation
-        prevTo='/'
-        prevText='FiHome'
-        nextTo='/calendar'
-        nextText='AiCalendarOutline'
-      />
       <form className={styles.birthday__form} onSubmit={handleSubmit(onSubmit)}>
         <div className={styles.birthday__title}>
           <div className={styles.birthday__title__cake}>

@@ -13,9 +13,10 @@ import {
   AiOutlineSearch,
 } from "react-icons/ai";
 import { useState } from "react";
-import List from "./List";
+import List from "../Navigation/List";
 import Person from "../Person/Person";
-import Search from "./Search";
+import Search from "../Navigation/Search";
+import Calendar from "../Calendar/Calendar";
 
 const Home = () => {
   const addBirthdayState = useSelector((state: any) => state.addBirthday);
@@ -45,61 +46,7 @@ const Home = () => {
 
   return (
     <div className={styles.home}>
-      <div className={styles.links}>
-        <Link to='/birthday-form' className={styles.link}>
-          <AiOutlineForm />
-          <div>Form</div>
-        </Link>
-        <Link to='/calendar' className={styles.link}>
-          <AiOutlineCalendar />
-          <div>Calendar</div>
-        </Link>
-        <div className={styles.link}>
-          {isOpenSearch ? (
-            <div>
-              <div className={styles.triangle}></div>
-              <RxCross1
-                className={styles.icon}
-                onClick={() => setIsOpenSearch(!isOpenSearch)}
-              />
-            </div>
-          ) : (
-            <div>
-              <AiOutlineSearch
-                className={styles.icon}
-                onClick={() => setIsOpenSearch(!isOpenSearch)}
-              />
-            </div>
-          )}
-          <div className={styles.alert__list}>
-            {isOpenSearch && (
-              <Search handleChangeCalendar={(date: string) => {}} />
-            )}
-          </div>
-        </div>
-        <div
-          onClick={() => setIsOpenAlert(!isOpenAlert)}
-          className={styles.link}
-        >
-          {isOpenAlert ? (
-            <div>
-              <div className={styles.triangle}></div>
-              <RxCross1
-                className={styles.icon}
-                onClick={() => setIsOpenAlert(!isOpenAlert)}
-              />
-            </div>
-          ) : (
-            <MdNotifications
-              className={styles.icon}
-              onClick={() => setIsOpenAlert(!isOpenAlert)}
-            />
-          )}
-          <div className={styles.alert__list}>{isOpenAlert && <List />}</div>
-        </div>
-      </div>
-
-      <div className={styles.newest}>
+      {/* <div className={styles.newest}>
         {newestData.length === 0 ? (
           <h2>No birthdays</h2>
         ) : (
@@ -112,7 +59,8 @@ const Home = () => {
             ))}
           </div>
         )}
-      </div>
+      </div> */}
+      <Calendar />
     </div>
   );
 };

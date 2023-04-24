@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import { Birthday, birthdayActions } from "../../redux/birthdaySlice";
-import styles from "./Home.module.scss";
+import styles from "./Navigation.module.scss";
 import { motion } from "framer-motion";
 
 interface ModalProps {

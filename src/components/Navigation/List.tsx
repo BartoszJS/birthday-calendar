@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import styles from "./Home.module.scss";
+import styles from "./Navigation.module.scss";
 import { useSelector } from "react-redux";
 import { compareAsc, differenceInDays, parse, startOfToday } from "date-fns";
 import { Birthday } from "../../redux/birthdaySlice";

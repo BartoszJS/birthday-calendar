@@ -17,7 +17,7 @@ import styles from "./Calendar.module.scss";
 import { useSelector } from "react-redux";
 import { Birthday } from "../../redux/birthdaySlice";
 import Person from "../Person/Person";
-import Search from "../Home/Search";
+import Search from "../Navigation/Search";
 import { AiOutlineSearch } from "react-icons/ai";
 import { RxCross1 } from "react-icons/rx";
 

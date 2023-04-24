@@ -9,14 +9,8 @@ const Calendar = () => {
 
   return (
     <div className={style.calendars}>
-      <Navigation
-        prevTo='/'
-        prevText='FiHome'
-        nextTo='/birthday-form'
-        nextText='AiOutlineForm'
-      />
       <div className={style.calendars__buttons}>
-        <button
+        {/* <button
           className={style.calendars__button}
           onClick={() => setMode("week")}
         >
@@ -27,7 +21,7 @@ const Calendar = () => {
           onClick={() => setMode("month")}
         >
           month
-        </button>
+        </button> */}
       </div>
 
       {mode === "month" ? <CalendarMonth /> : <CalendarWeek />}

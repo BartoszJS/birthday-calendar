@@ -18,8 +18,7 @@ import styles from "./Calendar.module.scss";
 import { useSelector } from "react-redux";
 import { Birthday } from "../../redux/birthdaySlice";
 import Person from "../Person/Person";
-import Modal from "../Modal/Modal";
-import Search from "../Home/Search";
+import Search from "../Navigation/Search";
 import { RxCross1 } from "react-icons/rx";
 import { AiOutlineSearch } from "react-icons/ai";
 
@@ -28,7 +27,6 @@ const Calendar = () => {
   const colStartClasses = [0, 1, 2, 3, 4, 5, 6];
   const [selectedDay, setSelectedDay] = useState(today);
   const [currentMonth, setCurrentMonth] = useState(format(today, "MMM-yyyy"));
-  const [showModal, setShowModal] = useState(false);
   const [isOpenSearch, setIsOpenSearch] = useState(false);
   let firstDayCurrentMonth = parse(currentMonth, "MMM-yyyy", new Date());
 
@@ -135,7 +133,6 @@ const Calendar = () => {
                   type='button'
                   onClick={() => {
                     setSelectedDay(day);
-                    setShowModal(true);
                   }}
                   className={
                     isEqual(day, selectedDay)
@@ -170,11 +167,6 @@ const Calendar = () => {
                 {selectedDayBirthdays.map((date: Birthday, index: number) => (
                   <li key={index}>
                     <Person {...date} />
-                    <Modal
-                      open={showModal}
-                      onClose={() => setShowModal(false)}
-                      date={date.date}
-                    />
                   </li>
                 ))}
               </div>
