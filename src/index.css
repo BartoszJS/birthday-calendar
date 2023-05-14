@@ -7,5 +7,6 @@
 }
 
 body {
-  background-color: #e8f4ff;
+  background-image: url("../public/illustrator-planet.jpg");
+  background-size: cover;
 }

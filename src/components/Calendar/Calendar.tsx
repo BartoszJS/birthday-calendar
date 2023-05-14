@@ -1,30 +1,20 @@
 import { useState } from "react";
 import CalendarMonth from "./CalendarMonth";
-import CalendarWeek from "./CalendarWeek";
 import style from "./Calendar.module.scss";
-import Navigation from "../Navigation/Navigation";
+import NewBirthdays from "../NewBirthdays/NewBirthdays";
+import { startOfToday } from "date-fns";
 
 const Calendar = () => {
-  const [mode, setMode] = useState("month");
+  const today = startOfToday();
+  const [selectedDay, setSelectedDay] = useState(today);
+  const handleChange = (day: Date) => {
+    setSelectedDay(day);
+  };
 
   return (
     <div className={style.calendars}>
-      <div className={style.calendars__buttons}>
-        {/* <button
-          className={style.calendars__button}
-          onClick={() => setMode("week")}
-        >
-          week
-        </button>
-        <button
-          className={style.calendars__button}
-          onClick={() => setMode("month")}
-        >
-          month
-        </button> */}
-      </div>
-
-      {mode === "month" ? <CalendarMonth /> : <CalendarWeek />}
+      <CalendarMonth handleChange={handleChange} />
+      <NewBirthdays selectedDay={selectedDay} />
     </div>
   );
 };

@@ -20,8 +20,6 @@ import Calendar from "../Calendar/Calendar";
 
 const Home = () => {
   const addBirthdayState = useSelector((state: any) => state.addBirthday);
-  const [isOpenAlert, setIsOpenAlert] = useState(false);
-  const [isOpenSearch, setIsOpenSearch] = useState(false);
 
   const positiveData = [...addBirthdayState]
     .filter(
@@ -46,20 +44,6 @@ const Home = () => {
 
   return (
     <div className={styles.home}>
-      {/* <div className={styles.newest}>
-        {newestData.length === 0 ? (
-          <h2>No birthdays</h2>
-        ) : (
-          <div className={styles.single__person}>
-            <h2>The earliest birthdays will be</h2>
-            {newestData.map((birthdayData: Birthday, index) => (
-              <div key={index}>
-                <Person {...birthdayData} />
-              </div>
-            ))}
-          </div>
-        )}
-      </div> */}
       <Calendar />
     </div>
   );

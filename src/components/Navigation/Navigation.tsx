@@ -1,14 +1,7 @@
 import { Link } from "react-router-dom";
-import { TiArrowBack, TiArrowForward } from "react-icons/ti";
-import { FiHome } from "react-icons/fi";
-
 import { useSelector } from "react-redux";
-import { compareAsc, differenceInDays, parse } from "date-fns";
-import { Birthday } from "../../redux/birthdaySlice";
-
 import { MdNotifications } from "react-icons/md";
 import { RxCross1 } from "react-icons/rx";
-
 import {
   AiOutlineForm,
   AiOutlineCalendar,
@@ -16,32 +9,21 @@ import {
 } from "react-icons/ai";
 import { useState } from "react";
 import List from "./List";
-import Person from "../Person/Person";
 import Search from "./Search";
-import Calendar from "../Calendar/Calendar";
-
 import styles from "./Navigation.module.scss";
 
-interface Props {
-  nextTo: string;
-  nextText: string;
-  prevTo: string;
-  prevText: string;
-}
-
 const Navigation = () => {
-  const addBirthdayState = useSelector((state: any) => state.addBirthday);
   const [isOpenAlert, setIsOpenAlert] = useState(false);
   const [isOpenSearch, setIsOpenSearch] = useState(false);
   return (
     <div className={styles.navigation}>
-      <Link to='/birthday-form' className={styles.link}>
-        <AiOutlineForm />
-        <div>Form</div>
-      </Link>
       <Link to='/calendar' className={styles.link}>
         <AiOutlineCalendar />
         <div>Calendar</div>
+      </Link>
+      <Link to='/birthday-form' className={styles.link}>
+        <AiOutlineForm />
+        <div>Form</div>
       </Link>
       <div className={styles.link}>
         {isOpenSearch ? (

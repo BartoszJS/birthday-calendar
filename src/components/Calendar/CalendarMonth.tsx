@@ -17,12 +17,15 @@ import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
 import styles from "./Calendar.module.scss";
 import { useSelector } from "react-redux";
 import { Birthday } from "../../redux/birthdaySlice";
-import Person from "../Person/Person";
 import Search from "../Navigation/Search";
 import { RxCross1 } from "react-icons/rx";
 import { AiOutlineSearch } from "react-icons/ai";
 
-const Calendar = () => {
+type Props = {
+  handleChange(day: Date): void;
+};
+
+const CalendarMonth = ({ handleChange }: Props) => {
   const today = startOfToday();
   const colStartClasses = [0, 1, 2, 3, 4, 5, 6];
   const [selectedDay, setSelectedDay] = useState(today);
@@ -47,11 +50,10 @@ const Calendar = () => {
     setCurrentMonth(format(firstDayNextMonth, "MMM-yyyy"));
   };
 
-  let selectedDayBirthdays = birthdayDates.filter(
-    (daysOfBirth: Birthday) =>
-      getDate(parseISO(daysOfBirth.date)) === getDate(selectedDay) &&
-      getMonth(parseISO(daysOfBirth.date)) === getMonth(selectedDay)
-  );
+  const handleChangeDay = (day: Date) => {
+    setSelectedDay(day);
+    handleChange(day);
+  };
 
   return (
     <div className={styles.calendar}>
@@ -131,9 +133,7 @@ const Calendar = () => {
               >
                 <button
                   type='button'
-                  onClick={() => {
-                    setSelectedDay(day);
-                  }}
+                  onClick={() => handleChangeDay(day)}
                   className={
                     isEqual(day, selectedDay)
                       ? `${styles.calendar__month__day__button} ${styles.selected}`
@@ -157,35 +157,9 @@ const Calendar = () => {
             ))}
           </div>
         </div>
-        <div className={styles.calendar__birthdays}>
-          <ul className={styles.calendar__list}>
-            {selectedDayBirthdays.length > 0 ? (
-              <div>
-                <h2> Selected day {format(selectedDay, "MMMM dd, yyy")} </h2>
-                <h2> On this day, the birthdays have</h2>
-
-                {selectedDayBirthdays.map((date: Birthday, index: number) => (
-                  <li key={index}>
-                    <Person {...date} />
-                  </li>
-                ))}
-              </div>
-            ) : (
-              <div>
-                <h2>
-                  No birthdays in
-                  <time dateTime={format(selectedDay, "MMMM dd, yyy")}>
-                    {" "}
-                    {format(selectedDay, "MMMM dd, yyy")}
-                  </time>
-                </h2>
-              </div>
-            )}
-          </ul>
-        </div>
       </div>
     </div>
   );
 };
 
-export default Calendar;
+export default CalendarMonth;

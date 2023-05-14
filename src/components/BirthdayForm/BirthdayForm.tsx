@@ -5,7 +5,6 @@ import { RiCake2Line } from "react-icons/ri";
 
 import { birthdayActions } from "../../redux/birthdaySlice";
 import styles from "./BirthdayForm.module.scss";
-import Navigation from "../Navigation/Navigation";
 
 type Inputs = {
   name: string;

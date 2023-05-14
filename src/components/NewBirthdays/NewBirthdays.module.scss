@@ -1,0 +1,36 @@
+.calendar {
+  &__birthdays {
+    margin-top: 20px;
+    padding: 20px;
+    font-size: 0.8rem;
+    list-style-type: none;
+    border-top: 1px solid gray;
+    border-left: none;
+  }
+  &__list {
+    list-style-type: none;
+    padding: 0;
+  }
+  &__search {
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+  }
+
+  .alert__list {
+    position: absolute;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .calendar {
+    &__birthdays {
+      border-left: 1px solid gray;
+      border-top: none;
+    }
+  }
+}
